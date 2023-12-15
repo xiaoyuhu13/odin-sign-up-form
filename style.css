@@ -6,6 +6,11 @@ body{
 
 h1{
     color: white;
+    font-family: 'Agbalumo';
+}
+
+h2, h3, p, label{
+    font-family: 'Karla';
 }
 
 /*left side*/
@@ -54,8 +59,17 @@ h1{
 
 .logo {
     height: 15vh;
-    margin-right: 8px;
+    margin-right: 16px;
     filter: invert(100%);
+}
+
+.left p{
+    z-index: 4;
+    color: black;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
 }
 
 /*right side*/
@@ -66,12 +80,14 @@ h1{
     flex-direction: column;
     justify-content: center;
     padding: 0vh 6vw 0vh 6vw;
+    background-color: #F8FBFA;
 }
 
 form section:first-of-type{
     box-shadow: 3px 3px 5px lightgrey;
-    padding: 4vh 4vw;
+    padding: 4vh 6vw;
     margin: 0vh -6vw;
+    background-color: white;
 }
 
 .inputs-wrapper{
@@ -96,3 +112,87 @@ form section:first-of-type{
     flex-direction: column;
     margin-bottom: 4px;
 }
+
+button {
+    background-color: #FFCDEF;
+    border: none;
+    padding: 1.5vh 2vw;
+    border-radius: 8px;
+    box-shadow: 3px 3px 5px lightgrey;
+    margin: 8px 0px;
+    cursor: pointer;
+}
+
+.button-wrapper:hover {animation: shaking 0.5s 2;}
+      @keyframes shaking {
+         0% {transform: rotate(0deg);}
+         20% {transform: rotate(-4deg);}
+         50% {transform: rotate(0deg);}
+         70% {transform: rotate(4deg);}
+         100% {transform: rotate(0deg);}
+      }
+
+
+input {
+    appearance: none;
+    border-radius: 4px;
+    border: solid 1px black;
+    padding:4px;
+    width: 200px;
+}
+
+input:focus {
+    outline: none !important;
+    border:1px solid cornflowerblue;
+    box-shadow: 0 0 4px lightgray;
+}
+
+.button-wrapper{
+    position: relative;
+    width: fit-content;
+    margin-top: 16px;
+}
+
+.large-bite, .small-bite {
+    border-radius: 100%;
+    background-color: #F8FBFA;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    z-index: 4;
+    opacity: 0;
+}
+
+.button-wrapper:hover .large-bite{
+    opacity: 1;
+}
+
+.large-bite {
+    width: 32px;
+    height: 32px;
+    transform: translate(8px, -6px);
+}
+
+.small-bite {
+    width: 16px;
+    height: 16px;
+}
+.small-bite.one {
+    transform: translate(-20px, -2px);
+    transition: 0s opacity;
+}
+.small-bite.two {
+    transform: translate(10px, 20px);
+    transition: 0s opacity;
+}
+
+.button-wrapper:hover .small-bite.one{
+    opacity: 1;    
+    transition-delay: 0.33s;
+}
+
+.button-wrapper:hover .small-bite.two{
+    opacity: 1;    
+    transition-delay: 0.66s;
+}
+

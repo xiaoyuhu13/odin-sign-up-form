@@ -8,6 +8,7 @@ Features
 
 Improvements
 - validating passwords match with javascript
+- mobile responsive
   
 
   
